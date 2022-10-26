@@ -23,6 +23,7 @@ export default function Chats(props) {
               onClick={() =>
                 props.setSettings({ user: context.user, room: room })
               }
+              className={context.room === room ? "currentChat" : null}
             >
               {room}
             </li>

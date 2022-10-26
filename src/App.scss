@@ -33,6 +33,9 @@
     .Ulchats li:hover {
       cursor: pointer;
     }
+    .Ulchats .currentChat {
+      background-color: green;
+    }
   }
 }
 
@@ -43,9 +46,65 @@
   justify-content: space-between;
   text-align: center;
 
-  .messages {
+  .chat {
     overflow: auto;
+    .Ulmessages {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      list-style: none;
+      li {
+        margin: 5px 0;
+        padding: 5px 10px;
+        padding-left: 32px;
+        position: relative;
+        border-radius: 10px;
+        background-color: rgb(231, 229, 229);
+        .buttonQuote {
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
+        .tooltipI {
+          color: red;
+        }
+        .tooltipName {
+          text-transform: none;
+          color: #800080;
+        }
+        .tooltipButton {
+          padding: 0 !important;
+          justify-content: center !important;
+          background-color: silver;
+        }
+      }
+      .currentUserMessage {
+        align-self: flex-end;
+        background-color: rgba(42, 117, 255, 0.336);
+      }
+      .name {
+        color: blue;
+      }
+
+      .inputMessageQuote {
+        align-self: center;
+        position: relative;
+        .tooltipI {
+          color: red;
+        }
+        .tooltipName {
+          text-transform: none;
+          color: #800080;
+        }
+        .tooltipButton {
+          padding: 0 !important;
+          justify-content: center !important;
+          background-color: silver;
+        }
+      }
+    }
   }
+
   .inputMessage {
     position: relative;
     button {
