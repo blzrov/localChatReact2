@@ -9,7 +9,7 @@ export default function Settings({ setSettings }) {
 
   const context = useContext(settingsContext);
   useEffect(() => {
-    setRoom(context.room);
+    setRoom(context.room || "");
     sessionStorage.setItem("room", context.room);
   }, [context]);
 
@@ -66,9 +66,10 @@ export default function Settings({ setSettings }) {
           onClick={() => {
             setUser("");
             setRoom("");
-            setSettings({});
+            setSettings({ room: "" });
             sessionStorage.clear();
           }}
+          disabled={!context.user}
           variant="outlined"
           size="small"
           color="error"

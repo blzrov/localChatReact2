@@ -52,7 +52,7 @@ export default function Messages({ messages = [], sendMessage }) {
                 )}
                 {message.media ? (
                   <message.media
-                    width={160}
+                    width={200}
                     src={message.value}
                     alt=""
                     controls
