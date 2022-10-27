@@ -16,7 +16,7 @@ export default function InputMessageMedia({ send }) {
   const [type, setType] = useState("img");
   const [example, setExample] = useState(null);
 
-  const context = useContext(settingsContext); //input media add
+  const context = useContext(settingsContext);
   React.useEffect(() => {
     setUrl("");
     setType("img");

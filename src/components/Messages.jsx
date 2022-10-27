@@ -21,6 +21,7 @@ export default function Messages({ messages = [], sendMessage }) {
   return (
     <>
       <div className="chat" ref={chatRef}>
+        {messages.length === 0 ? <h2>Напишите первым!</h2> : null}
         <ul className="Ulmessages">
           {messages.map((message, index) => {
             const isCurrentUser = context.user === message.user;

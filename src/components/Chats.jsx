@@ -26,7 +26,10 @@ export default function Chats(props) {
               }}
               className={context.room === room ? "currentChat" : null}
             >
-              {room}
+              <b >
+                {room.length > 51 ? room.slice(0, 50) : room}:{" "}
+              </b>
+              {props.data[room][props.data[room].length - 1].value}
             </li>
           );
         })}

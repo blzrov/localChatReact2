@@ -26,21 +26,24 @@ export default function InputMessage({ sendMessage, quote, setQuote }) {
 
   return (
     <div className="inputMessage">
-      <div>
-        <TextField
-          value={value}
-          onChange={(e) => setValue(e.target.value)}
-          onKeyDown={(e) => {
-            if (e.key === "Enter" && value) {
-              send();
-            }
-          }}
-          placeholder="Введите сообщение..."
-          hiddenLabel
-          id="filled-basic"
-          variant="filled"
-          size="small"
-        />
+      <div className="inputWrapper">
+        <div className="input">
+          <TextField
+            fullWidth
+            value={value}
+            onChange={(e) => setValue(e.target.value)}
+            onKeyDown={(e) => {
+              if (e.key === "Enter" && value) {
+                send();
+              }
+            }}
+            placeholder="Введите сообщение..."
+            hiddenLabel
+            id="filled-basic"
+            variant="filled"
+            size="small"
+          />
+        </div>
         <Button
           disabled={!value}
           onClick={send}

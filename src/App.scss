@@ -1,5 +1,6 @@
 .App {
   margin: 0 auto;
+  margin-top: 10px;
   max-width: 80vw;
   display: grid;
   grid-template-columns: 4fr 8fr;
@@ -12,7 +13,7 @@
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
-  border: 2px solid blue;
+  border: 2px solid #086fa1;
   border-radius: 10px;
 
   .settings {
@@ -35,14 +36,14 @@
     }
     .Ulchats li {
       padding: 15px;
-      background-color: #e0f2f3;
+      background-color: #235c7941;
       border-bottom: 1px solid gray;
     }
     .Ulchats li:hover {
       cursor: pointer;
     }
     .Ulchats .currentChat {
-      background-color: green;
+      background-color: #3ca0d0;
     }
   }
 }
@@ -92,7 +93,7 @@
       }
       .currentUserMessage {
         align-self: flex-end;
-        background-color: rgba(42, 117, 255, 0.336);
+        background-color: #3ca0d0;
       }
       .name {
         color: blue;
@@ -119,6 +120,13 @@
 
   .inputMessage {
     position: relative;
+    .inputWrapper {
+      display: flex;
+      justify-content: center;
+      .input {
+        width: 50%;
+      }
+    }
     button {
       margin: 5px;
       font-family: inherit;
@@ -139,12 +147,15 @@
 
 @media (max-width: 640px) {
   .App {
+    margin-top: 0;
     max-width: 100%;
     grid-template-columns: 1fr;
     .left {
+      padding-bottom: 0;
       height: min-content;
       border: none;
       .settings {
+        margin-bottom: 0;
         text-align: center;
       }
       .chats {
@@ -152,8 +163,16 @@
       }
     }
     .right {
+      padding-top: 0;
       height: 70vh;
       border: none;
+      .inputWrapper {
+        flex-direction: column;
+        align-items: center;
+        .input {
+          width: 80%;
+        }
+      }
     }
   }
 }
