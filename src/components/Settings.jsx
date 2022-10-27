@@ -8,7 +8,10 @@ export default function Settings({ setSettings }) {
   const [room, setRoom] = useState(() => sessionStorage.getItem("room") || "");
 
   const context = useContext(settingsContext);
-  useEffect(() => setRoom(context.room), [context]);
+  useEffect(() => {
+    setRoom(context.room);
+    sessionStorage.setItem("room", context.room);
+  }, [context]);
 
   // eslint-disable-next-line
   useEffect(() => setSettings({ user, room }), []);

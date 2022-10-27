@@ -49,7 +49,7 @@ function App() {
       <settingsContext.Provider value={settings}>
         <div className="left">
           <Settings setSettings={setSettings} />
-          <Chats data={data} setSettings={setSettings} />
+          <Chats messages={data} setSettings={setSettings} />
         </div>
         <div className="right">
           {settings.user && settings.room ? (

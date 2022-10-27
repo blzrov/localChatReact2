@@ -38,6 +38,9 @@
       padding: 15px;
       background-color: #235c7941;
       border-bottom: 1px solid gray;
+      .user {
+        color: blue;
+      }
     }
     .Ulchats li:hover {
       cursor: pointer;

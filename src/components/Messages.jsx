@@ -56,6 +56,9 @@ export default function Messages({ messages = [], sendMessage }) {
                     src={message.value}
                     alt=""
                     controls
+                    onLoadedMetadata={() =>
+                      (chatRef.current.scrollTop = chatRef.current.scrollHeight)
+                    }
                   />
                 ) : (
                   message.value
