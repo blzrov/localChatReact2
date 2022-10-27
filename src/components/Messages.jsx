@@ -22,7 +22,7 @@ export default function Messages({ messages = [], sendMessage }) {
     <>
       <div className="chat" ref={chatRef}>
         {messages.length === 0 ? <h2>Напишите первым!</h2> : null}
-        <ul className="Ulmessages">
+        <ul>
           {messages.map((message, index) => {
             const isCurrentUser = context.user === message.user;
             const haveQuote = message.quote?.value && message.quote?.user;

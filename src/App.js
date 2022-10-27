@@ -16,11 +16,6 @@ function App() {
     setData(dataRef.current);
   }, []);
 
-  const saveData = () => {
-    localStorage.setItem("data", JSON.stringify(dataRef.current));
-    getData();
-  };
-
   const sendMessage = (value, quote, media) => {
     if (!dataRef.current[settings.room]) {
       dataRef.current[settings.room] = [];
@@ -32,7 +27,8 @@ function App() {
       media: media || null,
       date: Date.now(),
     });
-    saveData();
+    localStorage.setItem("data", JSON.stringify(dataRef.current));
+    getData();
   };
 
   useEffect(() => {

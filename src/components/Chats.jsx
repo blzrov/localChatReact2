@@ -15,7 +15,7 @@ export default function Chats({ messages, setSettings }) {
   return (
     <div className="chats">
       {rooms.length ? null : <h3>Тут будут чаты</h3>}
-      <ul className="Ulchats">
+      <ul>
         {rooms.map((room) => {
           const lastMessage = messages[room][messages[room].length - 1];
           return (
