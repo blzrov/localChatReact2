@@ -3,14 +3,22 @@
   max-width: 80vw;
   display: grid;
   grid-template-columns: 4fr 8fr;
+  gap: 10px;
 }
 
 .left {
-  height: 100vh;
+  padding: 10px;
+  height: 85vh;
   display: flex;
   flex-direction: column;
+  box-sizing: border-box;
+  border: 2px solid blue;
+  border-radius: 10px;
 
   .settings {
+    border-bottom: 2px solid black;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
     button {
       margin: 5px;
       font-family: inherit;
@@ -40,10 +48,14 @@
 }
 
 .right {
-  height: 100vh;
+  padding: 10px;
+  height: 85vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  box-sizing: border-box;
+  border: 2px solid black;
+  border-radius: 10px;
   text-align: center;
 
   .chat {
@@ -131,6 +143,7 @@
     grid-template-columns: 1fr;
     .left {
       height: min-content;
+      border: none;
       .settings {
         text-align: center;
       }
@@ -139,7 +152,8 @@
       }
     }
     .right {
-      height: 80vh;
+      height: 70vh;
+      border: none;
     }
   }
 }

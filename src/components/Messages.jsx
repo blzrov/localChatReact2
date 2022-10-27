@@ -73,7 +73,7 @@ export default function Messages({ messages = [], sendMessage }) {
           })}
           {quote.value && (
             <li className="inputMessageQuote">
-              <i className="tooltipI">Ответ на: </i>
+              <i className="tooltipI">Ответить: </i>
               <Tooltip arrow={true} title={quote.value} placement="top">
                 <Button className="tooltipButton" size="small">
                   <span className="tooltipName">{quote.user}</span>

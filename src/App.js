@@ -58,7 +58,7 @@ function App() {
               sendMessage={sendMessage}
             />
           ) : (
-            "Введите имя и комнату"
+            <h2>Введите имя и комнату</h2>
           )}
         </div>
       </settingsContext.Provider>

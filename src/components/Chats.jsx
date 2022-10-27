@@ -14,15 +14,16 @@ export default function Chats(props) {
 
   return (
     <div className="chats">
-      {data.length ? null : "Тут будут чаты"}
+      {data.length ? null : <h3>Тут будут чаты</h3>}
       <ul className="Ulchats">
         {data.map((room) => {
           return (
             <li
               key={room}
-              onClick={() =>
-                props.setSettings({ user: context.user, room: room })
-              }
+              onClick={() => {
+                if (context.user)
+                  props.setSettings({ user: context.user, room: room });
+              }}
               className={context.room === room ? "currentChat" : null}
             >
               {room}

@@ -45,16 +45,18 @@ export default function Settings({ setSettings }) {
         <Button
           onClick={() => {
             setSettings({});
-            if (user && room) {
-              setSettings({ user, room });
+            if (user) {
+              setSettings({ user, room: room || "" });
               sessionStorage.setItem("user", user);
               sessionStorage.setItem("room", room);
             }
           }}
+          disabled={!user}
           variant="contained"
           size="small"
+          color={context.user && context.room === room ? "success" : "primary"}
         >
-          Подтвердить
+          {context.user && context.room === room ? context.user : "Войти"}
         </Button>
 
         <Button
