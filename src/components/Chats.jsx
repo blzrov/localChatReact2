@@ -1,7 +1,9 @@
 import React from "react";
+import Switch from "@mui/material/Switch";
 import { settingsContext } from "../App";
 
 export default function Chats({ messages, setSettings }) {
+  const [checked, setChecked] = React.useState(false);
   const context = React.useContext(settingsContext);
   const rooms = Object.keys(messages);
   rooms.sort((a, b) => {
@@ -12,8 +14,18 @@ export default function Chats({ messages, setSettings }) {
     return 0;
   });
 
+  const handleChange = (event) => {
+    setChecked(event.target.checked);
+  };
+
   return (
     <div className="chats">
+      <Switch
+        checked={checked}
+        onChange={handleChange}
+        inputProps={{ "aria-label": "controlled" }}
+      />
+      <span>Чаты только с вашим участием to do</span>
       {rooms.length ? null : <h3>Тут будут чаты</h3>}
       <ul>
         {rooms.map((room) => {
